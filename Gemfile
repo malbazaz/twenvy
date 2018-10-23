@@ -34,8 +34,8 @@ group :development, :test do
   gem 'pry'
   gem 'pry-remote'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
+  # gem 'factory_girl_rails'
+  # gem 'database_cleaner'
 end
 
 group :development do
