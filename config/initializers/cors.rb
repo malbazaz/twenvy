@@ -8,7 +8,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins '*'
-    #You put there the website (Front end, e.g. ['localhost:3000,', 'twenvy.com'])
+    #You put there the website (Front end, e.g. ['localhost:3000,', 'twenvy.comg'])
 
     resource '*',
       headers: :any,
