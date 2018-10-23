@@ -1,4 +1,4 @@
-class API::v1::ProductsController < ApplicationController
+class API::ProductsController < ApplicationController
     def index
         @products = Product.all 
         render json: @products, status: 200
