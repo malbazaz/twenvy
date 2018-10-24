@@ -1,7 +1,7 @@
 class Api::CampaignsController < ApplicationController
     
     def index
-        @campaigns = Product.all 
+        @campaigns = Campaign.all 
         render json: @campaigns, status: 200
     end 
 
@@ -31,7 +31,7 @@ class Api::CampaignsController < ApplicationController
 
 
     private
-    
+
     def campaign_params
         params.require(:campaign).permit(:product_id, :end_date, :location, :target_qty, :sold_qty)
     end
