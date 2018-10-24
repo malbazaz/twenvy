@@ -6,7 +6,7 @@ class Api::CampaignsController < ApplicationController
     end 
 
     def create
-        @campaign = Campaign.new(campaign_params)
+        @campaign = Campaign.create(campaign_params)
         if @campaign.save
             render json: @campaign
         else 
