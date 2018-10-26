@@ -1,3 +1,4 @@
+require 'pry'
 class Api::CampaignsController < ApplicationController
     
     def index
@@ -6,6 +7,7 @@ class Api::CampaignsController < ApplicationController
     end 
 
     def create
+   
         @campaign = Campaign.create(campaign_params)
         if @campaign.save
             render json: @campaign
@@ -15,8 +17,17 @@ class Api::CampaignsController < ApplicationController
     end 
 
     def show 
+  
         @campaign = Campaign.find_by_id(params[:id])
-        render json: @campaign
+        # if params[:product_id]
+        #     @product = Product.find_by_id(params[:product_id])
+        #     response = { :campaign => @campaign, :product => @product }
+        #     respond_to do |format|
+        #         format.json  { render :json => response }
+        #       end
+        # else 
+            render json: @campaign
+        # end 
     end
 
     def update
