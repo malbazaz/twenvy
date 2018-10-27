@@ -32,7 +32,8 @@ class Api::CampaignsController < ApplicationController
 
     def update
         @campaign = Campaign.find_by_id(params[:id])
-        if @campaign.update(campaign_params)
+        if @campaign.update(qty_params)
+            @campaign.save
             render json: @campaign
         else 
             render json: {message: @campaign.errors}, status: 400
@@ -45,6 +46,10 @@ class Api::CampaignsController < ApplicationController
 
     def campaign_params
         params.require(:campaign).permit(:product_id, :end_date, :location, :target_qty, :sold_qty)
+    end
+
+    def qty_params
+        params.require(:campaign).permit(:sold_qty)
     end
 
 end
